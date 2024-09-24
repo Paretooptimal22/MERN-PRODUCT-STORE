@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Input, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, Input, useColorModeValue, VStack } from "@chakra-ui/react";
 import { useState } from "react"
 
 const CreatePage = () => {
@@ -7,6 +7,10 @@ const CreatePage = () => {
     price: "",
     image: "",
   });
+
+  const handleAddProduct = () => {
+    console.log(newProduct)
+  };
 
   return (
     <Container maxW={"container.sm"}>
@@ -39,6 +43,9 @@ const CreatePage = () => {
 							value={newProduct.image}
 							onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
 						/>
+            <Button colorScheme="blue" onClick={handleAddProduct} w={"full"}>
+              Add Product
+            </Button>
           </VStack>
         </Box>
       </VStack>
